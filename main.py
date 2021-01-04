@@ -25,6 +25,7 @@ REACH THE END BEFORE THE MAN GON GETCHU.
 """
 CHOICES = """
     ----
+    E. Status Check
     Q. QUIT
     ----
 """
@@ -42,18 +43,32 @@ def intro():
 def main():
     intro()
 
+    # variables
     done = False
+    km_traveled = 0         # 100km traveled is the goal
+    agents_distance = -20.0
+    turns = 0               # amount of turns taken
+    tofu = 3                # 3 is max tofu
+    fuel = 50               # 50 is full tank
+    hunger = 0              # hunger increases with num
 
     # LOOP
     while not done:
         pass
-    # TODO: Check if they reached end game
+    # Check if they reached end game
 
     # Give the player their choices
         print(CHOICES)
     # Handle users' input
         users_choice = input("What do you want to do? ").lower().strip("!.,?")
-        if users_choice == "q":
+        if users_choice == "e":
+            print(f"\t---Status---")
+            print(f"km_traveled: {km_traveled}")
+            print(f"Fuel left: {fuel}")
+            print(f"Agents are {abs(agents_distance)} KMs behind you")
+            print(f"You have {tofu} tofu left")
+            print("---------------\n")
+        elif users_choice == "q":
             done = True
 
 
